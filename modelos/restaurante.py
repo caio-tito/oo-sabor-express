@@ -8,6 +8,7 @@ class Restaurante:
         self._categoria = categoria.upper()
         self._ativo = False
         self._avaliacao = []
+        self._cardapio = []
         Restaurante.restuarantes.append(self)
     
     def __str__(self):
@@ -30,6 +31,12 @@ class Restaurante:
         if 0 < nota <= 5:
             avaliacao = Avaliacao(cliente, nota)
             self._avaliacao.append(avaliacao)
+
+    def adicionar_bebida_cardapio(self, bebida):
+        self._cardapio.append(bebida)
+
+    def adicionar_prato_cardapio(self, prato):
+        self._cardapio.append(prato)
 
     @property
     def media_avaliacoes(self):
